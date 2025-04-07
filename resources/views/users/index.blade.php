@@ -33,18 +33,17 @@
                         </thead>
                         <tbody>
                             @foreach ($users as $user)
+                            
                 <tr>
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->service_no }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->active }}</td>
-                    <td>{{ $user->role_id }}</td>
-                    {{-- <td>{{ $user->role ? $user->role->name : 'No Role Assigned' }}</td> --}}
-
-                    <td>{{ $user->rank_id}}</td>
-                    <td>{{ $user->location_id }}</td>
-                    <td>{{ $user->unit_id }}</td>
+                    <td>{{ $user->role->name }}</td>
+                    <td>{{ $user->ranks->name }}</td>
+                    <td>{{ $user->locations->name }}</td>
+                    <td>{{ $user->units->name }}</td>
                     <td>{{ $user->created_at }}</td>
                     <td>{{ $user->updated_at }}</td>
                     

@@ -14,14 +14,14 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('permission:view_users')->only('index', 'show');
-    //     $this->middleware('permission:create_users')->only('create', 'store');
-    //     $this->middleware('permission:edit_users')->only('edit', 'update');
-    //     $this->middleware('permission:delete_users')->only('destroy');
+    public function __construct()
+    {
+        $this->middleware('permission:view_users')->only('index', 'show');
+        $this->middleware('permission:create_users')->only('create', 'store');
+        $this->middleware('permission:edit_users')->only('edit', 'update');
+        $this->middleware('permission:delete_users')->only('destroy');
 
-    // }
+    }
     public function index()
     {
         $users = User::all();
@@ -63,13 +63,17 @@ class UserController extends Controller
         ]);
     
         // Create a new customer with the validated data
-        User::create( $validated);
+        // User::create( $validated);
+        $user = User::create($validated);
+
         $user->password = Hash::make($request->password);
         $user->active = 1;
         $user->save();
 
-        $user->syncRolesRole($request->input('role_id'));
+        $user->syncRoles($request->input('role_id'));
         $user->assignRole($request->input('role_id'));
+
+        
 
         return redirect()->route('users.index');
     }

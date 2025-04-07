@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 
 class UnitController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('permission:view_units')->only('index', 'show');
-    //     $this->middleware('permission:create_units')->only('create', 'store');
-    //     $this->middleware('permission:edit_units')->only('edit', 'update');
-    //     $this->middleware('permission:delete_units')->only('destroy');
+    public function __construct()
+    {
+        $this->middleware('permission:view_units')->only('index', 'show');
+        $this->middleware('permission:create_units')->only('create', 'store');
+        $this->middleware('permission:edit_units')->only('edit', 'update');
+        $this->middleware('permission:delete_units')->only('destroy');
 
-    // }
+    }
     public function index()
     {
         $units = Unit::all();

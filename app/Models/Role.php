@@ -18,10 +18,12 @@ class Role extends Model
 
     // Define the many-to-many relationship with Permission
     public function permission(){
-        return $this->belongsToMany(Permission::class, 'role_has_permissions');
+        return $this->belongsToMany(Permission::class);
     }
 
     public function user(){
         return $this->hasMany(User::class);
     }
 }
+
+

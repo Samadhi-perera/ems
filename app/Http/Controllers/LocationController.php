@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 
 class LocationController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('permission:view_locations')->only('index', 'show');
-    //     $this->middleware('permission:create_locations')->only('create', 'store');
-    //     $this->middleware('permission:edit_locations')->only('edit', 'update');
-    //     $this->middleware('permission:delete_locations')->only('destroy');
+    public function __construct()
+    {
+        $this->middleware('permission:view_locations')->only('index', 'show');
+        $this->middleware('permission:create_locations')->only('create', 'store');
+        $this->middleware('permission:edit_locations')->only('edit', 'update');
+        $this->middleware('permission:delete_locations')->only('destroy');
 
-    // }
+    }
     public function index()
     {
         $locations = Location::all();

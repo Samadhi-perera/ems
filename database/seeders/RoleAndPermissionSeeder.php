@@ -8,6 +8,7 @@ use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 // use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class RoleAndPermissionSeeder extends Seeder
 {
@@ -68,16 +69,14 @@ class RoleAndPermissionSeeder extends Seeder
            
         ]);
 
-        $user = User::find(1); // Find user with ID 1
-         $user->assignRole('admin'); // Assign 'admin' role
+        // $user = User::find(1); // Find user with ID 1
+        //  $user->assignRole('admin'); // Assign 'admin' role
 
+        //  $user = User::find(2); // Find user with ID 1
+        //  $user->assignRole('officer'); // Assign 'admin' role
 
-        //  foreach ($permissions as $permission) {
-        //     // Check if the permission already exists, if not, create it
-        //     Permission::firstOrCreate(
-        //         ['name' => $permission, 'guard_name' => 'web']
-        //     );
-        // }
+        //  $user = User::find(3); // Find user with ID 1
+        //  $user->assignRole('operator'); // Assign 'admin' role
 
         
     }

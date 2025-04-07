@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sessions', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
-            $table->text('payload');
-            $table->integer('last_activity');
-        });
+        if (!Schema::hasTable('sessions')) {
+            Schema::create('sessions', function (Blueprint $table) {
+                $table->string('id')->primary();
+                $table->foreignId('user_id')->nullable()->constrained()->onDelete('set null');
+                $table->text('payload');
+                $table->integer('last_activity');
+            });
+        }
     }
 
     /**

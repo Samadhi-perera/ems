@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        // 'officer' => [
+        //     'driver' => 'session',
+        //     'provider' => 'officers',  // This should point to the provider for officers
+        // ],
+        
     ],
 
     /*
@@ -64,6 +69,12 @@ return [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
+
+        // 'officers' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\Models\Officer::class,  // Officer model (replace this with your actual Officer model)
+        // ],
+    
 
         // 'users' => [
         //     'driver' => 'database',

@@ -25,11 +25,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware('role:operator,officer,admin')->group(function () {
 Route::resource('locations', LocationController::class);
 Route::resource('ranks', RankController::class);
 Route::resource('units', UnitController::class);
 Route::resource('users', UserController::class);
 
+});
 
 
 require __DIR__.'/auth.php';

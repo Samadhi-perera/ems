@@ -30,16 +30,16 @@
                             <strong>Active:</strong> {{ $user->active }}
                         </li>
                         <li class="list-group-item">
-                            <strong>Role:</strong> {{ $user->role }}
+                            <strong>Role:</strong> {{ $user->role->name }}
                         </li>
                         <li class="list-group-item">
-                            <strong>Rank:</strong> {{ $user->rank }}
+                            <strong>Rank:</strong> {{ $user->ranks->name }}
                         </li>
                         <li class="list-group-item">
-                            <strong>Location:</strong> {{ $user->location }}
+                            <strong>Location:</strong> {{ $user->locations->name }}
                         </li>
                         <li class="list-group-item">
-                            <strong>Unit:</strong> {{ $user->unit }}
+                            <strong>Unit:</strong> {{ $user->units->name }}
                         </li>
                         <li class="list-group-item">
                             <strong>Created At:</strong> 
