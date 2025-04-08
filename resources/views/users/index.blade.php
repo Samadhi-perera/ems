@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <a href="{{ route('users.create') }}" class="btn btn-primary float-end">Add New User</a>
                     
-                    <table class="table table-bordered table-striped">
+                    {{-- <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th>Id</th>
@@ -59,17 +59,27 @@
                             </tr>
                         @endforeach
                 </tbody>
-            </table> 
+            </table>  --}}
 
+            <div class="table-responsive">
+            {{ $dataTable->table() }}
+
+        </div>
             </div>
         </div>
     </div>
     @endsection
-    <script>
+    {{-- <script>
         function confirmDelete(){
             return confirm('Are You sure you want to delete this record? This action be undone.');
 
         }
 
-    </script>
+    </script> --}}
+
+@push('js')
+@section('plugins.Datatables', true)
+{{ $dataTable->scripts() }}
+@endpush
+
 

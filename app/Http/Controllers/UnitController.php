@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Unit;
+use App\DataTables\UnitsDataTable;
 
 use Illuminate\Http\Request;
 
@@ -15,10 +16,15 @@ class UnitController extends Controller
         $this->middleware('permission:delete_units')->only('destroy');
 
     }
-    public function index()
+    // public function index()
+    // {
+    //     $units = Unit::all();
+    //     return view('units.index', compact('units'));
+    // }
+    public function index(UnitsDataTable $dataTable)
     {
-        $units = Unit::all();
-        return view('units.index', compact('units'));
+        
+        return $dataTable->render('units.index');
     }
 
     public function create()

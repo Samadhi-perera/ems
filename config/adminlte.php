@@ -196,7 +196,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-dark-primary elevation-3',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -326,6 +326,9 @@ return [
             'icon' => 'fas fa-th text-yellow',
             
         ],
+
+      
+       
         [
             'text' => 'User Management',
             'icon' => 'fa fa fa- fa-users text-teal',
@@ -484,17 +487,17 @@ return [
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
                 ],
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
                 ],
             ],

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Location;
+use App\DataTables\LocationsDataTable;
 
 use Illuminate\Http\Request;
 
@@ -15,10 +16,15 @@ class LocationController extends Controller
         $this->middleware('permission:delete_locations')->only('destroy');
 
     }
-    public function index()
+    // public function index()
+    // {
+    //     $locations = Location::all();
+    //     return view('locations.index', compact('locations'));
+    // }
+    public function index(LocationsDataTable $dataTable)
     {
-        $locations = Location::all();
-        return view('locations.index', compact('locations'));
+        
+        return $dataTable->render('locations.index');
     }
 
     public function create()

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Rank;
+use App\DataTables\RanksDataTable;
 
 use Illuminate\Http\Request;
 
@@ -15,10 +16,15 @@ class RankController extends Controller
         $this->middleware('permission:delete_ranks')->only('destroy');
 
     }
-    public function index()
+    // public function index()
+    // {
+    //     $ranks = Rank::all();
+    //     return view('ranks.index', compact('ranks'));
+    // }
+    public function index(RanksDataTable $dataTable)
     {
-        $ranks = Rank::all();
-        return view('ranks.index', compact('ranks'));
+        
+        return $dataTable->render('ranks.index');
     }
 
     public function create()

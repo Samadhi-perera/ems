@@ -123,6 +123,20 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+//     'providers' => [
+//     // ...
+//     Yajra\DataTables\DataTablesServiceProvider::class,
+//     Illuminate\View\ViewServiceProvider::class,
+//     JeroenNoten\LaravelAdminLte\AdminLteServiceProvider::class,
+//     ],
+
+//     'aliases' => [
+//     // Other aliases...
+//     'View' => Illuminate\Support\Facades\View::class,
+//     'File' => Illuminate\Support\Facades\File::class,
+//     'Storage' => Illuminate\Support\Facades\Storage::class,
+// ],
+
     
 
 ];

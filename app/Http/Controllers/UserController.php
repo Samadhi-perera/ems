@@ -6,8 +6,9 @@ use App\Models\Location;  // Import Location Model
 use App\Models\Role;
 use App\Models\Rank;
 use App\Models\Unit;
-
+use App\DataTables\UsersDataTable;
 use Illuminate\Support\Facades\Hash;
+
 
 
 use Illuminate\Http\Request;
@@ -22,10 +23,16 @@ class UserController extends Controller
         $this->middleware('permission:delete_users')->only('destroy');
 
     }
-    public function index()
+    // public function index()
+    // {
+    //     $users = User::all();
+    //     return view('Users.index', compact('users'));
+    // }
+
+    public function index(UsersDataTable $dataTable)
     {
-        $users = User::all();
-        return view('Users.index', compact('users'));
+        
+        return $dataTable->render('users.index');
     }
 
     public function create()

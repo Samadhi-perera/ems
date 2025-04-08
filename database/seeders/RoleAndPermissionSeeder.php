@@ -7,7 +7,6 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
-// use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class RoleAndPermissionSeeder extends Seeder
@@ -37,8 +36,8 @@ class RoleAndPermissionSeeder extends Seeder
          
          // Create Roles
          $adminRole = Role::create(['name' => 'admin']);
-         $officertRole = Role::create(['name' => 'officer']);
-         $operatortRole = Role::create(['name' => 'operator']);
+         $officerRole = Role::create(['name' => 'officer']);
+         $operatorRole = Role::create(['name' => 'operator']);
          
          
          // Assign Permissions to Admin
@@ -69,15 +68,23 @@ class RoleAndPermissionSeeder extends Seeder
            
         ]);
 
-        // $user = User::find(1); // Find user with ID 1
-        //  $user->assignRole('admin'); // Assign 'admin' role
+        $user = User::find(1); // Find user with ID 1
+         $user->assignRole('admin'); // Assign 'admin' role
 
-        //  $user = User::find(2); // Find user with ID 1
-        //  $user->assignRole('officer'); // Assign 'admin' role
+         $user = User::find(2); // Find user with ID 2
+         $user->assignRole('officer'); // Assign 'officer' role
 
-        //  $user = User::find(3); // Find user with ID 1
-        //  $user->assignRole('operator'); // Assign 'admin' role
+         $user = User::find(3); // Find user with ID 3
+         $user->assignRole('operator'); // Assign 'operator' role
 
-        
+     
+        // $user = App\Models\User::find(1); // Replace with actual user ID
+        // $user->assignRole('admin');
+
+        // $user = App\Models\User::find(2); // Replace with actual user ID
+        // $user->assignRole('officer');
+
+        // $user = App\Models\User::find(3); // Replace with actual user ID
+        // $user->assignRole('operator');
     }
 }
