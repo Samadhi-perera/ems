@@ -77,9 +77,11 @@ class UserController extends Controller
         $user->active = 1;
         $user->save();
 
-        $user->syncRoles($request->input('role_id'));
-        $user->assignRole($request->input('role_id'));
-
+        $role = Role::findOrFail($request->input('role_id'));
+        
+        // Sync the roles for the user (in case role is updated)
+        $user->syncRoles([$role->name]);
+        $user->assignRole($role->name);
         
 
         return redirect()->route('users.index');

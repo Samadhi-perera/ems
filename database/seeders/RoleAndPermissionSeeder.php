@@ -86,5 +86,9 @@ class RoleAndPermissionSeeder extends Seeder
 
         // $user = App\Models\User::find(3); // Replace with actual user ID
         // $user->assignRole('operator');
+
+        // $role = \Spatie\Permission\Models\Role::find(3);
+        // $role->assignRole('operator');
+        // $role = Role::findByName('operator');
     }
 }

@@ -333,18 +333,7 @@ return [
             'text' => 'User Management',
             'icon' => 'fa fa fa- fa-users text-teal',
             'submenu' => [
-                // [
-                //     'text' => 'Permissions',
-                //     'url' => 'permissions',
-                //     // 'can' =>'permissions-list',
-                //     // 'active' =>'permissions'
-                // ],
-                // [
-                //     'text' => 'Roles',
-                //     'url' => 'roles',
-                //     // 'can' =>'roles-list',
-                //     // 'active' =>'roles'
-                // ],
+              
                 [
                     'text' => 'Users',
                     'url' => 'users',
